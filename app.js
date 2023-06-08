@@ -1,11 +1,9 @@
-// http://www.omdbapi.com/?apikey=b0099fba&s=fast
-
 const moviesContainer = document.querySelector('.movies');
 
 // RENDER MOVIES FROM OMDB API
 
 async function renderMovies(filter) {
-   const moviesResponse = await fetch(`http://www.omdbapi.com/?apikey=b0099fba&s=${id}`);
+   const moviesResponse = await fetch(`https://www.omdbapi.com/?apikey=b0099fba&s=${id}`);
    const moviesData = await moviesResponse.json();
    const moviesDataArray = moviesData.Search.slice(0,8)
 
@@ -63,4 +61,3 @@ function loadingState() {
     const searchResult = document.querySelector('.search__results')
     searchResult.innerHTML = `Search results for <span class="primary--accent">'${id}'</span>`
 }
-
