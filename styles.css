@@ -215,7 +215,7 @@ SEARCH
 
 .container {
     background-color: #242424;
-    padding: 40px 20px;
+    padding: 40px 35px;
 }
 
 .row {
@@ -237,7 +237,7 @@ SEARCH
 }
 
 #filter {
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid #dcdfe6;
     color: #606266;
     font-size: 16px;
@@ -352,6 +352,37 @@ LOADING
 .primary--accent {
     color: #E50914;
 }
+
+
+/* 
+
+TABLETS, SMALL LAPTOPS 
+
+*/
+
+
+@media (max-width: 900px) {
+    .movie {
+        width: 50%;
+    }
+
+    #search {
+        height: calc(100vh - 352px);
+    }
+
+    .movie__img {
+        max-height: none;
+    }
+
+    .content__wrapper {
+        padding: 0 20px;
+    }
+
+    .search__heading {
+        font-size: 40px;
+    }
+}
+
 
 /* 
 

@@ -5,7 +5,7 @@ const moviesContainer = document.querySelector('.movies');
 async function renderMovies(filter) {
    const moviesResponse = await fetch(`https://www.omdbapi.com/?apikey=b0099fba&s=${id}`);
    const moviesData = await moviesResponse.json();
-   const moviesDataArray = moviesData.Search.slice(0,8)
+   const moviesDataArray = moviesData.Search.slice(0,8);
 
    moviesContainer.classList.remove('movies__loading')
 
@@ -43,21 +43,22 @@ function generateMovieHtml(movie) {
 // SEARCH INPUT EVENT HANDLER
 
 function searchInput(event) {
-    id = event.target.value
-    loadingState()
+    id = event.target.value;
+    loadingState();
+    document.querySelector('#filter').selectedIndex = 0;
     setTimeout(() => {
         renderMovies()
     }, 1000);
 }
 
-// LOADING STATE'
+// LOADING STATE AFTER SEARCH
 function loadingState() {
-    const movieEl = document.querySelectorAll('.movie')
-    movieEl.forEach(element => element.remove())
+    const movieEl = document.querySelectorAll('.movie');
+    movieEl.forEach(element => element.remove());
 
-    moviesContainer.classList.add('movies__loading')
-    moviesContainer.innerHTML = `<i class="fas fa-spinner movies__loading--spinner"></i>`
+    moviesContainer.classList.add('movies__loading');
+    moviesContainer.innerHTML = `<i class="fas fa-spinner movies__loading--spinner"></i>`;
 
-    const searchResult = document.querySelector('.search__results')
-    searchResult.innerHTML = `Search results for <span class="primary--accent">'${id}'</span>`
+    const searchResult = document.querySelector('.search__results');
+    searchResult.innerHTML = `Search results for <span class="primary--accent">'${id}'</span>`;
 }
